@@ -1,26 +1,22 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.17;
 
-contract ErrorHandling {
-   
-    function Assertfun(uint num) public pure{
-        assert(num!=0);
+contract ErrorHandlingExample {
+    uint public value;
+
+    function OverallMarks(uint num) public pure {
+        assert(num > 70);
     }
 
-    function divide(uint _numerator, uint _denomenator) public pure returns (uint){
-        if(_numerator<_denomenator){
-           
-            revert("Pls input numerator greater than denomenator.");
-            
+    function MathsMarks(uint num) public pure {
+        if (num <= 60) {
+            revert("Marks must be greater or equal to 60.");
         }
-        return _numerator/_denomenator;
-       
-
     }
-    function multiple(uint a) public view returns (uint){
-        require(a>0,"Enter more then 0.");
-        return a*mult;
 
+    function ScienceMarks(uint num) public pure {
+        require(num > 60, "Number must be greater than 60.");
     }
-uint mult=3;
+
+
 }
