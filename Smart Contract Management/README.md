@@ -8,7 +8,7 @@ This project demonstrates deployment of frontend with solidity
 
 - Node.js (v14.0.0 or higher)
 - MetaMask wallet extension installed in your browser
-- 
+
 ## Description
 
 For this project, create a simple contract with 2-3 functions. Then show the values of those functions in frontend of the application.
