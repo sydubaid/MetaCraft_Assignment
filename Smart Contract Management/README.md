@@ -17,7 +17,6 @@ The files index.js, SmartContract.sol, and deploy.js contain codes.
 
 
   
-
 ## Setup
 
 After cloning GitHub, you will want to do the following to get the code running on your computer.
