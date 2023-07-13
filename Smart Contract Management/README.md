@@ -44,8 +44,8 @@ http://localhost:3000
 -> Set the (New RPC URL - http://127.0.0.1:8545/ )
 -> Set the (Chain ID - 31337 )
 -> Set the (Currency symbol - ETH )
-->Now set the MetaMask wallet network to the newly created local network</pre>
--> Now you can deposit and withdraw the dummy ETH.
+->Now set the MetaMask wallet network to the newly created local network
+-> Now you can deposit and withdraw the dummy ETH.</pre>
 
 ## Technologies Used
 
