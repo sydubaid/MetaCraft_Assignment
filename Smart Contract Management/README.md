@@ -36,7 +36,7 @@ http://localhost:3000
 
 
 ->We need to set up a local network with the MetaMask wallet. otherwise, Metamask will not be able to communicate with the local node. click on the MetaMask extension.
-<pre>
+
 -> Click on (Add a Network)
 -> Click on (Add a Network Manually)
 -> Give the (Network name - whatever you want)
@@ -44,7 +44,7 @@ http://localhost:3000
 -> Set the (Chain ID - 31337 )
 -> Set the (Currency symbol - ETH )
 ->Now set the MetaMask wallet network to the newly created local network
--> Now you can deposit and withdraw the dummy ETH.</pre>
+-> Now you can deposit and withdraw the dummy ETH.
 
 ## Technologies Used
 
