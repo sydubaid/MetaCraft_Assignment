@@ -37,14 +37,14 @@ http://localhost:3000
 
 ->We need to set up a local network with the MetaMask wallet. otherwise, Metamask will not be able to communicate with the local node. click on the MetaMask extension.
 
--> Click on (Add a Network)
--> Click on (Add a Network Manually)
--> Give the (Network name - whatever you want)
--> Set the (New RPC URL - http://127.0.0.1:8545/ )
--> Set the (Chain ID - 31337 )
--> Set the (Currency symbol - ETH )
-->Now set the MetaMask wallet network to the newly created local network
--> Now you can deposit and withdraw the dummy ETH.
+- Click on (Add a Network)
+- Click on (Add a Network Manually)
+- Give the (Network name - whatever you want)
+- Set the (New RPC URL - http://127.0.0.1:8545/ )
+- Set the (Chain ID - 31337 )
+- Set the (Currency symbol - ETH )
+- Now set the MetaMask wallet network to the newly created local network
+- Now you can deposit and withdraw the dummy ETH.
 
 ## Technologies Used
 
