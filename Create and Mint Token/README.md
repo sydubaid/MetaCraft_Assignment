@@ -13,7 +13,7 @@ Follow these steps to deploy token on local hardhat network using local pc (here
 1. Clone the repository and install its dependencies:
 
 ```
-git clone https://github.com/21bcs9782/ETH_AVAX-3Module.git
+git clone https://github.com/sydubaid/MetaCraft_Assignment/Create-and-Mint-Token.git
 cd ETH_AVAX-3Module.git
 npm install
 ```
