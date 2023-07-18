@@ -1,8 +1,8 @@
-## Degen Gaming Token
+# Degen Gaming Token
 
 Degen Gaming Token is an ERC20 token deployed on the Avalanche blockchain. This token is designed to enhance the gaming experience within the Degen Gaming platform by allowing players to earn and exchange tokens for in-game rewards and items.
 
-# Description
+## Description
 The DegenToken contract is an ERC20 token smart contract that enables various functionalities for players in the Degen Gaming platform
 
 ## Deployment
