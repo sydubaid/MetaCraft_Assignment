@@ -1,7 +1,8 @@
 
-# Circuit Deployment on Polygon
-This repository contains the imlementation of the given circuit diagram using circom and also demonstrates 
-how to deploy it on Polygon Mumbai Testnet
+# Custom Circuit 
+This repository contains the circuit and the deployment process of mumbai Testnet
+
+circuit.circom contains the code for the circuit 
 
 ## Steps to Run
 
