@@ -7,7 +7,7 @@ The DegenToken contract is an ERC20 token smart contract that enables various fu
 
 ## Deployment
          
-- For transaction you will need AVAX as gas fees are need, you can get AVAX from https://core.app/tools/testnet-faucet/?subnet=c&token=c .
+- For transaction you will need AVAX as gas fees are need.
          
 The Degen Gaming Token contract has been deployed on the Avalanche network. The contract address is `Your deployed contract address`.
 
