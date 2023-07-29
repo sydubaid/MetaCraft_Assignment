@@ -9,7 +9,7 @@ In this project, we showcase a step-by-step guide on how to deploy a captivating
 ### Objective
   
  
-In this project, we deployed the "Shibu-Inu" collection on the Ethereum blockchain, creating five unique NFT images using the Lexica image generation tool and securely storing them on IPFS via pinata.cloud. With the ERC721 smart contract "AnasContract" and its promptDescription function, users can access the image generation prompts. We then seamlessly mapped the NFT collection to the Polygon network, leveraging faster and more cost-effective transactions. Through Hardhat scripts, we batch minted and transferred all NFTs from Ethereum to Polygon Mumbai using the FxPortal Bridge, ensuring accurate balance and smooth functionality on the Polygon Mumbai network.
+In this project, we deployed the "Shibu-Inu" collection on the Ethereum blockchain, creating five unique NFT images using the Bing AI image generation tool and securely storing them on IPFS via pinata.cloud. With the ERC721 smart contract "shibainu" and its promptDescription function, users can access the image generation prompts. We then seamlessly mapped the NFT collection to the Polygon network, leveraging faster and more cost-effective transactions. Through Hardhat scripts, we batch minted and transferred all NFTs from Ethereum to Polygon Mumbai using the FxPortal Bridge, ensuring accurate balance and smooth functionality on the Polygon Mumbai network.
 
 ### Tools Used
 Hardhat
@@ -23,12 +23,18 @@ FxPortal Bridge
 3. Upload your newly created NFTs to IPFS for efficient storage and accessibility.
 4. In the Hardhat configuration file, add your desired networks and private key of your wallet for deployment purposes.
 5. Open the terminal and install the necessary dependencies by running the command npm i.
-6. Create a smart contract using ERC721 standard and include a prompt description function. Compile the contract by executing npx hardhat compile.
-7. Deploy the smart contract to the desired network (e.g., Goerli) by running npx hardhat run scripts/deploy.js --network goerli.
-8. To call the prompt description function, execute npx hardhat run scripts/prompt.js --network goerli.
-9. Mint five NFTs simultaneously by running npx hardhat run scripts/batchmint.js --network goerli.
-10. If you wish to transfer the NFTs from Goerli to the Polygon Mumbai network via the bridge, use the script npx hardhat run scripts/approvedep.js --network goerli.
-11. Finally, check the NFT balance on the Polygon Mumbai network by running npx hardhat run scripts/getbal.js --network mumbai.
+6. Create a smart contract using ERC721 standard and include a prompt description function.
+    Compile the contract by executing npx hardhat compile.
+8. Deploy the smart contract to the desired network (e.g., Goerli)
+    by running npx hardhat run scripts/deploy.js --network goerli.
+10. To call the prompt description function
+    execute npx hardhat run scripts/prompt.js --network goerli.
+12. Mint five NFTs simultaneously by running
+    npx hardhat run scripts/batchmint.js --network goerli.
+14. To transfer the NFTs from Goerli to the Polygon Mumbai network via the bridge
+    use the script npx hardhat run scripts/approvedep.js --network goerli.
+16. Finally, check the NFT balance on the Polygon Mumbai network
+    by running npx hardhat run scripts/getbal.js --network mumbai.
 
 ## Authors
 
