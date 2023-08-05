@@ -1,56 +1,68 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-
 contract DegenToken is ERC20, Ownable {
-    constructor() ERC20("DEGEN", "DEG") {}
+    uint256 private constant supply = 100;
+    uint8 private constant decimal = 0;
 
-    function mint(address to, uint256 amount) public onlyOwner {
-        _mint(to, amount);
+    struct InGameItem {
+        string name;
+        uint256 priceInTokens;
     }
 
-    function decimals() override public pure returns(uint8){
-        return 0;
+    mapping(string => InGameItem) private _items;
+    string[] private _itemNames;
+
+    event Burn(address indexed account, uint256 amount);
+    event Mint(address indexed account, uint256 amount);
+    event Redeem(address indexed account, uint256 amount, string item);
+
+    constructor(string memory name, string memory symbol) ERC20(name, symbol) {
+        _mint(msg.sender, supply);
     }
 
-    function transfer(address recipient, uint256 amount) public override returns (bool) {
-        require(amount > 0, "Amount must be greater than zero");
-        return super.transfer(recipient, amount);
-    }
-    function burnTokens(uint amount) external{
-            require(balanceOf(msg.sender)>= amount, "You do not have enough Tokens");
-            _burn(msg.sender, amount);
+    function addItemToStore(string memory itemName, uint256 priceInTokens) external onlyOwner {
+        require(priceInTokens > 0, "Price must be greater than zero");
+
+        _itemNames.push(itemName);
+        _items[itemName] = InGameItem(itemName, priceInTokens);
     }
 
-    enum ItemOption { NFT1, NFT2, NFT3}
-
-    struct Redemption {
-        ItemOption itemOption;
-        uint256 tokenAmount;
-        uint256 optionId;
+    function getItemPrice(string memory itemName) public view returns (uint256) {
+        return _items[itemName].priceInTokens;
     }
 
-    mapping(address => Redemption) public redemptionOptions;
+    function redeem(string memory itemName) external {
+        uint256 priceInTokens = getItemPrice(itemName);
+        require(balanceOf(msg.sender) >= priceInTokens, "Insufficient balance");
 
-    function redeem(uint256 optionId) public {
-        require(optionId >= 1 && optionId <= 3, "Invalid option");
+        _burn(msg.sender, priceInTokens);
+        emit Redeem(msg.sender, priceInTokens, itemName);
+    }
 
-        if (optionId == 1) {
-            require(balanceOf(msg.sender) >= 80, "Insufficient tokens");
-            _burn(msg.sender, 80);
-            redemptionOptions[msg.sender] = Redemption(ItemOption.NFT1, 1, optionId);
-        } else if (optionId == 2) {
-            require(balanceOf(msg.sender) >= 140, "Insufficient tokens");
-            _burn(msg.sender, 140);
-            redemptionOptions[msg.sender] = Redemption(ItemOption.NFT2, 1, optionId);
-        } else if (optionId == 3) {
-            require(balanceOf(msg.sender) >= 220, "Insufficient tokens");
-            _burn(msg.sender, 220);
-            redemptionOptions[msg.sender] = Redemption(ItemOption.NFT3, 1, optionId);
+    function getAllItems() external view returns (InGameItem[] memory) {
+        InGameItem[] memory allItems = new InGameItem[](_itemNames.length);
+
+        for (uint256 i = 0; i < _itemNames.length; i++) {
+            allItems[i] = _items[_itemNames[i]];
         }
+
+        return allItems;
     }
 
+    function mint(address account, uint256 amount) external onlyOwner {
+     _mint(account, amount);
+    }
+
+    function burn(uint256 amount) external {
+      _burn(msg.sender, amount);
+        emit Burn(msg.sender, amount);
+    }
+    function checkBalance() external view returns(uint){
+           return balanceOf(msg.sender);
+        }
+        //using the standard transfer function provided by the ERC20 contract for token transfers.
 }
